@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "prod": "node dist/server.js",
     "dev": "ts-node-dev -r dotenv/config --transpile-only --ignore-watch node_modules --respawn src/server.ts"
   },
   "dependencies": {
