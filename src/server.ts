@@ -8,7 +8,7 @@ import uploadConfig from './config/multer';
 import { EHttpCodes } from './enums/EHttpCodes';
 import { Exception } from './errors/Exception';
 import { errorHandler } from './middlewares/errorHandler';
-import { Nota } from './schema/Nota';
+import { Nota } from './schemas/Nota';
 
 const upload = multer(uploadConfig);
 
@@ -19,6 +19,8 @@ const app = express();
 app.use(express.json());
 
 app.use('/files', express.static(path.join(__dirname, '..', 'uploads')));
+
+app.get('/', (request, response) => response.send('Welcome to Hermes'));
 
 app.get('/notas', async (request, response) => {
   const notas = await Nota.find();

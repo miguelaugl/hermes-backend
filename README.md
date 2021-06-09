@@ -47,7 +47,7 @@ $ yarn dev
 ├── ...
 ├── docs                # Docs relateds
 ├── uploads             # Uploaded files
-├── src (código legado)
+├── src
 │   ├── config          # Configuration for libraries or interal uses
 │   ├── enums           # TypeScript enums
 │   ├── errors          # Errors handlers
