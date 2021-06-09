@@ -8,7 +8,7 @@ import uploadConfig from './config/multer';
 import { EHttpCodes } from './enums/EHttpCodes';
 import { Exception } from './errors/Exception';
 import { errorHandler } from './middlewares/errorHandler';
-import { Nota } from './models/Nota';
+import { Nota } from './schema/Nota';
 
 const upload = multer(uploadConfig);
 
@@ -45,17 +45,13 @@ app.patch('/editar-nota/:id', async (request, response) => {
     throw new Exception('Nota não encontrada', EHttpCodes.REQUISICAO_RUIM);
   }
 
-  nota.texto = request.body?.texto || nota.texto;
+  const notaAtualizada = await Nota.findByIdAndUpdate(id, { new: true });
 
-  await nota.save();
-
-  return response.status(EHttpCodes.CRIADO).json(nota);
+  return response.status(EHttpCodes.CRIADO).json(notaAtualizada);
 });
 
 app.post('/criar-nota', upload.single('foto'), async (request, response) => {
   const { texto } = request.body;
-
-  console.log(request.file);
 
   const foto = request.file?.filename;
 
