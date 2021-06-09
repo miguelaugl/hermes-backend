@@ -40,7 +40,7 @@ $ yarn dev
 # The server will start at port 3333 by default. Access: <http://localhost:3333>
 ```
 
-## :construction_worker: **Arquitetura**
+## :construction_worker: **Architecture**
 
 ```text
 .
