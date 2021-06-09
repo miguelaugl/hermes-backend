@@ -34,7 +34,7 @@ $ cd hermes-backend
 # Install dependencies
 $ yarn
 
-# Execute a aplicaÃ§Ã£o
+# Execute the application
 $ yarn dev
 
 # The server will start at port 3333 by default. Access: <http://localhost:3333>
